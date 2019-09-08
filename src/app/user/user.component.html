@@ -1,4 +1,4 @@
-<div class="cointaner">
+<div class="container-fluid">
   <div class="upper">
     <img src="../../assets/logo/cpe.png" alt="cpe logo"> <br>
     <b>POLYTECHNIC UNIVERSITY OF THE PHILIPPINES <br>
@@ -10,7 +10,7 @@
 
   <div class="lower">
     <div class="about">
-      <h6> <b> ONLINE WEB-BASED COMPENDIUM SYSTEM </b> </h6>
+      <b> ONLINE WEB-BASED COMPENDIUM SYSTEM </b>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -31,9 +31,7 @@
       </p>
     </div>
     <div class="started" *ngIf="myStart">
-      <button class="button" (click)="Search()"> Get Started &nbsp;
-        <i class="fas fa-chevron-right"></i>
-      </button>
+      <button class="button" (click)="Search()"> Get Started </button>
     </div>
     <div class="search" *ngIf="mySearch">
       <div class="inputbox">
