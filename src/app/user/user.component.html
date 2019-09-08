@@ -1,0 +1,75 @@
+<div class="cointaner">
+  <div class="upper">
+    <img src="../../assets/logo/cpe.png" alt="cpe logo"> <br>
+    <b>POLYTECHNIC UNIVERSITY OF THE PHILIPPINES <br>
+    COLLEGE OF ENGINEERING<br>
+    COMPUTER ENGINEERING DEPARTMENT</b>
+  </div>
+  
+  <div class="line"></div>
+
+  <div class="lower">
+    <div class="about">
+      <h6> <b> ONLINE WEB-BASED COMPENDIUM SYSTEM </b> </h6>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <div class="started" *ngIf="myStart">
+      <button class="button" (click)="Search()"> Get Started &nbsp;
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    <div class="search" *ngIf="mySearch">
+      <div class="inputbox">
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <input type="text" placeholder="&#xf031; &nbsp; Keyword">
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <input type="text" placeholder="&#xf02d; &nbsp; Title">
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <input type="text" placeholder="&#xf406; &nbsp; Author">
+          </div>
+          <div class="col-sm-12 col-md-2 col-lg-2">
+              <button class="button2" a routerLink="/result">
+                <i class="fas fa-search"></i> Search
+              </button>
+          </div>
+        </div>
+      </div>
+        <br>
+      <div class="row">
+        <div class="col-lg-4 col-md-3 col-sm-2 space"> </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 undergrad">
+          <input type="radio" name="level" value="Undergrad" checked> Undergrad
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 masters">
+          <input type="radio" name="level" value="Masters"> Masters
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-2 space"> </div>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+
+
+</div>
