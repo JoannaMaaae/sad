@@ -1,3 +1,4 @@
+//LOGIN SM FIRST DESIGN
 /*.login-sm{
     text-align: center;
     background: white;
@@ -81,6 +82,102 @@
                     width: 13px;
                     margin: 0;
                 }
+            }
+        }
+    }
+}*/
+
+.login-sm{
+    text-align: center;
+
+    [class*="col-"]{
+        text-align: center;
+        padding: 0px;
+
+        .upper{
+            background: linear-gradient( 180deg, #FD991C 10%, #FCCF31 100%);
+            border-bottom-left-radius: 70px;
+            padding: 30px;
+
+            img{
+                width: 145px;
+                height: 145px;
+            }
+
+            b{
+                font-size: .7em;
+            }
+        }
+        
+        form{
+        display: block;
+        text-align: center;
+        margin: auto;
+        border: none;
+        border-radius: 20px;
+        background: white;
+        padding: 30px;
+        width: 100%;
+
+            a, b{
+                font-size: .8em;
+            }
+
+            .remember{
+                width: auto;
+                font-size: .8em;
+
+                input[type=checkbox]{
+                    width: 13px;
+                    margin: 0;
+                }
+
+            }
+
+            input{
+                width: 80%;
+                margin: 10px;
+                border: 1px solid gray;
+                border-radius: 10px;
+                padding: 8px;
+                outline: none;
+            }
+
+            input::placeholder {
+                font-family: "Font Awesome 5 Free", Helvetica;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 2;
+                font-weight: 600;
+                font-size: .7em;
+            }
+            
+            .button{
+                background-color: #FD991C;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: .8em;
+                border-radius: 25px;
+                width: 60%;
+            }
+    
+            .button:hover {
+                background-color: #FFB71C;
+            }
+    
+            .button:active {
+            background-color: #FD991C;
+            transform: translateY(4px);
             }
         }
     }
@@ -210,4 +307,3 @@
         display: block;
     }
 }
-*/
