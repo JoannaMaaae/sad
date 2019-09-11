@@ -108,3 +108,53 @@ footer{
         }
     }
 }
+
+@media screen and (max-width: 575.98px){ 
+    .col-sm-2.puplogo{
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+    .col-sm-8.headings{
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .col-sm-2.cpelogo{
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+/*
+@media screen and (max-width: 768px){ 
+    .upper{
+        //background: linear-gradient( 135deg, #FD991C 10%, #FCCF31 100%);
+        background: pink;
+
+        [class*="col-"]{
+            text-align: center;
+            
+            .header{
+                padding: 30px;
+                color: black;
+                font-size: .8em;
+            }
+
+            .pup{
+            padding: 20px;
+
+                img{
+                    width: 90px;
+                    height: 98px;
+                }
+            }
+
+            .cpe{
+            padding: 15px;
+                img{
+                    width: 102px;
+                    height: 102px;
+                }
+            }
+        }
+    }
+}*/
