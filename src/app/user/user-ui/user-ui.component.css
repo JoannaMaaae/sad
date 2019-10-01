@@ -1,0 +1,146 @@
+.upper {
+  background-color: #FD991C;
+}
+
+.upper [class*="col-"] {
+  text-align: center;
+}
+
+.upper [class*="col-"] .header {
+  padding: 30px;
+  color: black;
+  font-size: 1.1em;
+}
+
+.upper [class*="col-"] .pup {
+  padding: 20px;
+}
+
+.upper [class*="col-"] .pup img {
+  width: 108px;
+  height: 108px;
+}
+
+.upper [class*="col-"] .cpe {
+  padding: 15px;
+}
+
+.upper [class*="col-"] .cpe img {
+  width: 120px;
+  height: 120px;
+}
+
+.line {
+  background-color: black;
+  height: 3px;
+  width: 100%;
+}
+
+.lower {
+  font-size: 1em;
+  padding: 30px;
+}
+
+.lower [class*="col-"] {
+  text-align: center;
+}
+
+.lower [class*="col-"] input {
+  width: 95%;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 15px;
+  outline: none;
+}
+
+.lower [class*="col-"] input::-webkit-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+}
+
+.lower [class*="col-"] input:-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+}
+
+.lower [class*="col-"] input::-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+}
+
+.lower [class*="col-"] input::placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background: #fff;
+  font-size: .9em;
+  color: black;
+}
+
+footer hr {
+  width: 150px;
+}
+
+.back [class*="col-"] {
+  text-align: center;
+}
+
+.back [class*="col-"] .button {
+  background-color: #FD991C;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  width: 150px;
+}
+
+.back [class*="col-"] .button:hover {
+  background-color: #FFB71C;
+}
+
+.back [class*="col-"] .button:active {
+  background-color: #FD991C;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+/*# sourceMappingURL=user-ui.component.css.map */

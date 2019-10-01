@@ -1,0 +1,31 @@
+.box1 {
+  background: red;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+}
+
+.box1 .box2 {
+  background: blue;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
+  height: 400px;
+}
+
+.sample {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 5em;
+}
+
+.sample .button1 {
+  border: 2px;
+  background: yellow;
+  position: relative;
+  left: 20%;
+}
+/*# sourceMappingURL=app.component.css.map */
