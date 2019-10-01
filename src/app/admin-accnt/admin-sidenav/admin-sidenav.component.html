@@ -6,6 +6,8 @@
         <a [class.active]="this.showBooks" (click)="toggleBooks()">Books</a>
         <a [class.active]="this.showAdminSettings" (click)="toggleAdminSettings()">Admin Settings</a>
         <a [class.active]="this.showContact" (click)="toggleContact()">Contact</a>
+  <button type="button" class="btn btn-danger"
+          (click)="logoutUser()">Logout</button>
         <!-- <a value="call Function" (click)="toggleAbout()">About</a>
         <a value="call Function2" (click)="toggleServices()">Services</a>
         <a value="call Function3" (click)="toggleClients()">Clients</a>

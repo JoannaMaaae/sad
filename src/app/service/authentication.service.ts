@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
+import {first} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,6 @@ export class AuthenticationService {
     });
   }
 
-
   async login(email: string, password: string) {
     return await this.angularFireAuth.auth.signInWithEmailAndPassword(email, password);
   }
@@ -33,6 +33,9 @@ export class AuthenticationService {
     return await this.angularFireAuth.auth.signOut();
   }
   isUserLoggedIn() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return (user !== null) ? true : false;
     return JSON.parse(localStorage.getItem('user'));
   }
+
 }
