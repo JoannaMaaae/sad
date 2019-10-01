@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { AdminHeaderComponent } from './admin-accnt/admin-header/admin-header.co
 import { AdminContentComponent } from './admin-accnt/admin-sidenav/admin-content/admin-content.component';
 import { AdminSidenavComponent } from './admin-accnt/admin-sidenav/admin-sidenav.component';
 import { EventEmitterService } from './event-emitter.service';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { EventEmitterService } from './event-emitter.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [
     EventEmitterService
