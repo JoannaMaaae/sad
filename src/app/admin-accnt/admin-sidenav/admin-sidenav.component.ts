@@ -40,6 +40,15 @@ export class AdminSidenavComponent implements OnInit {
     }
   }
 
+  toggleAdminSettings() {
+    this.showAdminSettings = ! this.showAdminSettings;
+    if (this.showAdminSettings === true) {
+      this.showHome = false;
+      this.showContact = false;
+      this.showBooks = false;
+    }
+  }
+
   toggleContact() {
     this.showContact = ! this.showContact;
     if (this.showContact === true) {
@@ -55,15 +64,6 @@ export class AdminSidenavComponent implements OnInit {
       this.showBooks = false;
       this.showContact = false;
       this.showAdminSettings = false;
-    }
-  }
-
-  toggleAdminSettings() {
-    this.showAdminSettings = ! this.showAdminSettings;
-    if (this.showAdminSettings === true) {
-      this.showHome = false;
-      this.showContact = false;
-      this.showBooks = false;
     }
   }
 
