@@ -1,0 +1,217 @@
+<div class="sidenav">
+
+        <p class="Navig">Navigation</p>
+
+        <a [class.active]="this.showHome" (click)="toggleHome()">Home</a>
+        <a [class.active]="this.showBooks" (click)="toggleBooks()">Books</a>
+        <a [class.active]="this.showAdminSettings" (click)="toggleAdminSettings()">Admin Settings</a>
+        <a [class.active]="this.showContact" (click)="toggleContact()">Contact</a>
+        <!-- <a value="call Function" (click)="toggleAbout()">About</a>
+        <a value="call Function2" (click)="toggleServices()">Services</a>
+        <a value="call Function3" (click)="toggleClients()">Clients</a>
+        <a value="call Function4" (click)="toggleContact()">Contact</a> -->
+
+
+</div>
+
+<div class="main">
+
+    <div class="bookHome" *ngIf="showHome" id="showDiv">
+
+        <div class="row" style="margin-top: 20px;">
+
+            <div class="col-12">
+                <div class="row">
+
+                 <div class="col-lg-3 col-sm-6">
+                    <img src="../../../assets/images/66979442_2295554370521058_5587093251925475328_n.png" class="homeLogo" alt="Fox">
+                 </div>
+
+                 <div class="col-lg-9 col-sm-6" style="padding: 0;">
+
+                  <div class= "row" style="padding: none;">
+                    <div class="col-lg-12 firstTitle">
+                     <p>PUP-BSCPE</p>
+                    </div>
+
+
+
+                    <div class="col-lg-12 secondTitle">
+                        <p>ONLINE WEB-BASED COMPENDIUM</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider">
+
+          </div>
+
+          <table class="tableHome">
+                <tr>
+                  <td>Total Dissertions: </td>
+                  <td style="text-align: right;">400</td>
+                </tr>
+
+                <tr>
+                    <td>Total Authors: </td>
+                    <td style="text-align: right;">100</td>
+                </tr>
+
+                <tr>
+                    <td>Total Books Borrowed: </td>
+                    <td style="text-align: right;">169</td>
+
+                </tr>
+
+                <tr>
+                    <td>Total Books Lost: </td>
+                    <td style="text-align: right;">5</td>
+                </tr>
+          </table>
+
+    </div>
+
+    <div class="bookContent" *ngIf="showBooks" id="showDiv">
+
+      <div class="row">
+        <div class="col-lg-12" class="titleBook">
+          BOOKS
+        </div>
+      </div>
+
+      <div class="row justify-content-start" style="padding: 0; margin-top: 10px;">
+        <div class="col-lg-3" style="padding: 0;">
+          <button (click)="toggleBookList()" class="viewList">BOOK LISTING</button>
+        </div>
+
+        <div class="col-lg-3" style="padding: 0;">
+          <button (click)="toggleAddBook()" class="addToList">Add a Book</button>
+        </div>
+
+      <div *ngIf="showBookList" class="bookList">
+
+
+        <table style="text-align: center; border: 1px solid black;">
+          <caption> Thesis Book List </caption>
+          <tr>
+            <td  style="text-align: center;"> ISBN </td>
+            <td style="text-align: center;"> Title </td>
+            <td style="text-align: center;"> Authors </td>
+            <td style="text-align: center;"> Co-Authors </td>
+            <td style="text-align: center;"> Date Published </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"> 5651 </td>
+            <td> Detachable Wheelchair Power Cycle for the Disable <br>
+              Workers of Tahanang Walang Hagdanan Inc. </td>
+            <td> Cordero, Joachim <br>
+              Gonzales, Keith Irvin Miguel <br>
+              Legaspi, Jeilene <br>
+              Soriano, Kimberly Ann </td>
+            <td> Pajabera, Orlando V. <br>
+              Velasco, Antonio Y. </td>
+            <td style="text-align: center;"> March 2020 </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"> 5652 </td>
+            <td> KALEPS: Kakawate Leaves Extract Pesticide Solution <br>
+              Maker </td>
+            <td> Garcia, Judy Ann <br>
+              Guballa, Ma. Elena <br>
+              Roma, Johannadel <br>
+              Yabut, Aaron Lester </td>
+            <td> Pajabera, Orlando V. <br>
+              Velasco, Antonio Y. </td>
+            <td style="text-align: center;"> March 2020 </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"> 5653 </td>
+            <td> Automated Briquetting Machine </td>
+            <td> Babaran, Precious Anne S. <br>
+              Cervas, Charlon N. <br>
+              Dela Cruz, Michaella P. <br>
+              Odono, Joanna Mae C. </td>
+            <td> Pajabera, Orlando V. <br>
+              Velasco, Antonio Y. </td>
+            <td style="text-align: center;"> March 2020 </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"> 5654 </td>
+            <td> Web Application Controlled Electronic Variable <br>
+              Coffee Mixer </td>
+            <td> Andag, John Zidrex <br>
+              Apura, Alyssa Karla <br>
+              Buyco, Jayven <br>
+              Medina, Robert Edrian </td>
+            <td> Pajabera, Orlando V. <br>
+              Velasco, Antonio Y. </td>
+            <td style="text-align: center;"> March 2020 </td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"> 5655 </td>
+            <td> Machine-Based Crude Oil Production Using Plastic <br>
+              Waste </td>
+            <td> Marco, Bryan Russel E. <br>
+              Morilla, Victor Jr. G. <br>
+              Peralta, Marvin A. <br>
+              Sestoso, Jhon Cedrick M. </td>
+            <td> Pajabera, Orlando V. <br>
+              Velasco, Antonio Y. </td>
+            <td style="text-align: center;"> March 2020 </td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div *ngIf="showAddBook" class="addBook">
+
+        <form>
+          <div class="form-row" styles="margin-right: auto: margin-left: auto;">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">TITLE</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="TITLE">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">ISBN</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="ISBN">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">TITLE</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="TITLE">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">ISBN</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="ISBN">
+              </div>
+
+              <div class="form-group col-md-6">
+                  <label for="inputEmail4">TITLE</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="TITLE">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">ISBN</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="ISBN">
+                </div>
+
+          </div>
+        </form>
+
+        </div>
+
+    </div>
+
+    <div class="bookAdminSettings" *ngIf="showAdminSettings" id="showDiv">
+
+    </div>
+
+    <div class="bookContact" *ngIf="showContact" id="showDiv">
+
+      </div>
+
+
+</div>
+

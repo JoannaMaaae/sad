@@ -1,0 +1,219 @@
+/* The sidebar menu */
+.sidenav {
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0;
+  background-color: rgb(39, 38, 38);
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top: 60px;
+
+    /* The navigation menu links */
+    a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+    }
+
+    /*hover effect */
+    a:hover {
+      color: #f1f1f1;
+    }
+
+    // a:active{
+    //   color: white;
+    // }
+  }
+
+  /* Style page content */
+.main {
+  margin-left: 203px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+  color: black;
+  background-color: rgb(210, 233, 236)	;
+  width: 85%;
+  height: 650px;
+  position: relative;
+}
+
+.Navig{
+  font-size: 25px;
+  color: white;
+  background-color: #3f3c3c;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+.bookHome{
+  position: absolute;
+  top: 5%;
+  left: 65px;
+  right: auto;
+  width: 90%;
+  height: 550px;
+  background-color: white;
+  border-top: 3px solid deepskyblue;
+}
+
+.bookAdminSettings{
+  position: absolute;
+  top: 5%;
+  left: 65px;
+  right: auto;
+  width: 90%;
+  height: 600px;
+  background-color: white;
+  border-top: 3px solid deepskyblue;
+}
+
+.col-lg-12.firstTitle{
+  margin-top: 20px;
+}
+
+.firstTitle{
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+.secondTitle{
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+
+.divider{
+  width: 90%;
+  height: 2px;
+  background-color: #DCDCDC	;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tableHome {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: auto;
+}
+
+tr:nth-child(odd) {
+  background-color:  rgb(248, 247, 247);
+}
+
+.homeLogo{
+  width: 190px;
+  height: 190px;
+  margin-left: 20px;
+}
+
+// .row div{
+//   border: 1px solid black;
+// }
+// .row {
+//   padding: none;
+// }
+
+// :active{
+//   color: white;
+// }
+
+.bookContact{
+  position: absolute;
+  top: 20%;
+  left : 15%;
+  width: 70%;
+  height: 350px;
+  margin: 0 auto;
+  background-color: rgb(106, 238, 137);
+}
+
+.bookContent{
+  position: absolute;
+  top: 5%;
+  left: 65px;
+  right: auto;
+  width: 90%;
+  height: 600px;
+  background-color: white;
+  border-top: 3px solid deepskyblue;
+}
+
+
+.viewList{
+  background-color: white;
+    color: black;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid deepskyblue;
+    border-bottom: none;
+    padding: 10px;
+}
+
+.addBook{
+  width: 95%;
+  height: 500px;
+  background-color: white;
+  border-top: 4px solid deepskyblue;
+  border-left: 2px solid deepskyblue;
+}
+
+.bookList{
+  width: 95%;
+  height: 500px;
+  background-color: white;
+  border-top: 4px solid deepskyblue;
+  border-left: 2px solid deepskyblue;
+}
+
+.titleBook{
+  padding: 15px;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+form div{
+  border: 1px solid black;
+}
+.form-row{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 25px;
+
+}
+
+.addToList{
+  background-color: white;
+    color: black;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid deepskyblue;
+    border-bottom: none;
+    padding: 10px;
+}
+
+.buttonsRow{
+  width: 200px;
+  height: 100px;
+
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
