@@ -41,15 +41,14 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [
     EventEmitterService,
     DataService,
     UserComponent,
-   // AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    EventEmitterService,
     AuthGuard
   ],
   bootstrap: [AppComponent]
