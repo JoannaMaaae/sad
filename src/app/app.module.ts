@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthGuard} from './_guard/auth.guard';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,15 +44,13 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [
     EventEmitterService,
     DataService,
     UserComponent,
-    AngularFireAuthModule,
-    EventEmitterService,
-    AuthGuard,
-    AngularFireAuth
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
