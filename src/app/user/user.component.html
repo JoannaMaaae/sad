@@ -12,22 +12,22 @@
     <div class="about">
       <b> ONLINE WEB-BASED COMPENDIUM SYSTEM </b>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit
-        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit
-        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
+        
+
+
+        Online Web-Based Compendium System is a collection of thesis in both bachelor and masters degree under the Computer Engineering Department of Polytechnic University of the Philippines from year 2000 to 2019. 
+        This system aims to provide conveniency to students in which they can access this system if their thesis is already available or not.
+        Students can also use these for references on their ongoing thesis including data collection, formats, etc. 
+
+        This system enables the user to enter a name of an author, co-authors and title. 
+        Upon entering the details needed the system will then display the Title, Author, Co-Author, Date Published and the Abstract of the study.
+
+        
+      
+        
+        
+
+
       </p>
     </div>
     <div class="started" *ngIf="myStart"> 
@@ -37,14 +37,14 @@
       <div class="inputbox">
         <div class="row">
           <div class="col-sm-12 col-md-3 col-lg-3">
-            <input type="text" placeholder="&#xf031; &nbsp; Keyword"  #box (keyup)="onEnter(box.value)" (keyup.enter)="clicked" >
+            <input type="text" [disabled]="KeywordIsDisabled" (click)="KeywordClick()" placeholder="&#xf031; &nbsp; Keyword"  #box (keyup)="onEnter(box.value)" (keyup.enter)="clicked" >
             
           </div>
           <div class="col-sm-12 col-md-4 col-lg-4">
-            <input type="text" placeholder="&#xf02d; &nbsp; Title" >
+            <input type="text" placeholder="&#xf02d; &nbsp; Title" (click)="TitleClick()" [disabled]="TitleIsDisabled">
           </div>
           <div class="col-sm-12 col-md-3 col-lg-3">
-            <input type="text" placeholder="&#xf406; &nbsp; Author" >
+            <input type="text" placeholder="&#xf406; &nbsp; Author" (click)="AuthorClick()" [disabled]="AuthorIsDisabled" >
           </div>
           <div class="col-sm-12 col-md-2 col-lg-2">
               <button class="button2" a routerLink="/result" (click)="newMessage()">

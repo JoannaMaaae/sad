@@ -17,7 +17,7 @@ export class UserUIComponent implements OnInit {
   private _searchTerm: string;
   constructor(private data: DataService, private User: DataService, private router: Router) { }
   filtersResult(searchString: string) {
-    return this.result.filter(res => res.origin.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
+    return this.result.filter(res => res.origin.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
    }
 
   onEnter(value: string) {

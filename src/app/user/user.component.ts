@@ -15,7 +15,25 @@ export class UserComponent implements OnInit {
   message: string;
   value = '';
   click = false;
+  KeywordIsDisabled = false;
+  TitleIsDisabled = false;
+  AuthorIsDisabled = false;
 
+KeywordClick() {
+  this.KeywordIsDisabled = false;
+  this.TitleIsDisabled = true;
+  this.AuthorIsDisabled = true;
+}
+TitleClick() {
+  this.KeywordIsDisabled = true;
+  this.TitleIsDisabled = false;
+  this.AuthorIsDisabled = true;
+}
+AuthorClick() {
+  this.KeywordIsDisabled = true;
+  this.TitleIsDisabled = true;
+  this.AuthorIsDisabled = false;
+}
   Search() {
     this.mySearch = true;
     this.myStart = false;

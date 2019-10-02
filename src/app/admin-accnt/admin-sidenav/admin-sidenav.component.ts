@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService} from '../../service/authentication.service';
+import { Router } from '@angular/router';
 // import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
 @Component({
@@ -10,7 +12,7 @@ export class AdminSidenavComponent implements OnInit {
   eventEmitterServices: any;
   eventEmitterService: any;
 
-  constructor( ) { /*private fb: FormBuilder*/
+  constructor(private authService: AuthenticationService, private router: Router ) { /*private fb: FormBuilder*/
 
    }
   //  productForm: FormGroup;
@@ -22,6 +24,17 @@ export class AdminSidenavComponent implements OnInit {
 
   showBookList = false;
   showAddBook = false;
+
+  // SignOut Firebase Session and Clean LocalStorage
+  logoutUser() {
+    this.authService.logout()
+      .then(res => {
+        console.log(res);
+        localStorage.removeItem('user');
+        this.router.navigate(['/login']);
+      }, err => {
+      });
+  }
 
   ngOnInit() {
     if  (this.eventEmitterServices.subsVar === undefined) {
@@ -40,6 +53,15 @@ export class AdminSidenavComponent implements OnInit {
     }
   }
 
+  toggleAdminSettings() {
+    this.showAdminSettings = ! this.showAdminSettings;
+    if (this.showAdminSettings === true) {
+      this.showHome = false;
+      this.showContact = false;
+      this.showBooks = false;
+    }
+  }
+
   toggleContact() {
     this.showContact = ! this.showContact;
     if (this.showContact === true) {
@@ -55,15 +77,6 @@ export class AdminSidenavComponent implements OnInit {
       this.showBooks = false;
       this.showContact = false;
       this.showAdminSettings = false;
-    }
-  }
-
-  toggleAdminSettings() {
-    this.showAdminSettings = ! this.showAdminSettings;
-    if (this.showAdminSettings === true) {
-      this.showHome = false;
-      this.showContact = false;
-      this.showBooks = false;
     }
   }
 

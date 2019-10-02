@@ -2,10 +2,12 @@
 
         <p class="Navig">Navigation</p>
 
-        <a [class.active]="this.showHome" (click)="toggleHome()">Home</a>
-        <a [class.active]="this.showBooks" (click)="toggleBooks()">Books</a>
-        <a [class.active]="this.showAdminSettings" (click)="toggleAdminSettings()">Admin Settings</a>
-        <a [class.active]="this.showContact" (click)="toggleContact()">Contact</a>
+        <button class="aList" [class.active]= "this.showHome" (click)="toggleHome()">Home</button>
+        <button class="aList" [class.active]= "this.showBooks" (click)="toggleBooks()">Books</button>
+        <button class="aList" [class.active]= "this.showAdminSettings" (click)="toggleAdminSettings()">Admin Settings</button>
+        <button class="aList" [class.active]= "this.showContact" (click)="toggleContact()">Contact</button>
+        <button type="button" class="btn btn-danger"
+        (click)="logoutUser()">Logout</button>
         <!-- <a value="call Function" (click)="toggleAbout()">About</a>
         <a value="call Function2" (click)="toggleServices()">Services</a>
         <a value="call Function3" (click)="toggleClients()">Clients</a>
@@ -83,28 +85,28 @@
       </div>
 
       <div class="row justify-content-start" style="padding: 0; margin-top: 10px;">
-        <div class="col-lg-3" style="padding: 0;">
-          <button (click)="toggleBookList()" class="viewList">BOOK LISTING</button>
+        <div class="col-lg-3" style="padding: 0;  margin-left: 10px;">
+          <button (click)="toggleBookList()" [class.bookActive] ="showBookList" class="viewList">BOOK LISTING</button>
         </div>
 
-        <div class="col-lg-3" style="padding: 0;">
-          <button (click)="toggleAddBook()" class="addToList">Add a Book</button>
+        <div class="col-lg-3" style="padding: 0; margin-left: 10px; ">
+          <button (click)="toggleAddBook()" [class.bookActive] ="showAddBook" class="addToList">Add a Book</button>
         </div>
 
       <div *ngIf="showBookList" class="bookList">
 
 
-        <table style="text-align: center; border: 1px solid black;">
-          <caption> Thesis Book List </caption>
+        <table>
           <tr>
-            <td  style="text-align: center;"> ISBN </td>
-            <td style="text-align: center;"> Title </td>
-            <td style="text-align: center;"> Authors </td>
-            <td style="text-align: center;"> Co-Authors </td>
-            <td style="text-align: center;"> Date Published </td>
+            <td> ISBN </td>
+            <td> Title </td>
+            <td> Authors </td>
+            <td> Co-Authors </td>
+            <td> Date Published </td>
           </tr>
+
           <tr>
-            <td style="text-align: center;"> 5651 </td>
+            <td> 5651 </td>
             <td> Detachable Wheelchair Power Cycle for the Disable <br>
               Workers of Tahanang Walang Hagdanan Inc. </td>
             <td> Cordero, Joachim <br>
@@ -113,10 +115,11 @@
               Soriano, Kimberly Ann </td>
             <td> Pajabera, Orlando V. <br>
               Velasco, Antonio Y. </td>
-            <td style="text-align: center;"> March 2020 </td>
+            <td> March 2020 </td>
           </tr>
+
           <tr>
-            <td style="text-align: center;"> 5652 </td>
+            <td> 5652 </td>
             <td> KALEPS: Kakawate Leaves Extract Pesticide Solution <br>
               Maker </td>
             <td> Garcia, Judy Ann <br>
@@ -125,10 +128,11 @@
               Yabut, Aaron Lester </td>
             <td> Pajabera, Orlando V. <br>
               Velasco, Antonio Y. </td>
-            <td style="text-align: center;"> March 2020 </td>
+            <td> March 2020 </td>
           </tr>
+
           <tr>
-            <td style="text-align: center;"> 5653 </td>
+            <td> 5653 </td>
             <td> Automated Briquetting Machine </td>
             <td> Babaran, Precious Anne S. <br>
               Cervas, Charlon N. <br>
@@ -136,10 +140,11 @@
               Odono, Joanna Mae C. </td>
             <td> Pajabera, Orlando V. <br>
               Velasco, Antonio Y. </td>
-            <td style="text-align: center;"> March 2020 </td>
+            <td> March 2020 </td>
           </tr>
+
           <tr>
-            <td style="text-align: center;"> 5654 </td>
+            <td> 5654 </td>
             <td> Web Application Controlled Electronic Variable <br>
               Coffee Mixer </td>
             <td> Andag, John Zidrex <br>
@@ -148,10 +153,11 @@
               Medina, Robert Edrian </td>
             <td> Pajabera, Orlando V. <br>
               Velasco, Antonio Y. </td>
-            <td style="text-align: center;"> March 2020 </td>
+            <td> March 2020 </td>
           </tr>
+
           <tr>
-            <td style="text-align: center;"> 5655 </td>
+            <td> 5655 </td>
             <td> Machine-Based Crude Oil Production Using Plastic <br>
               Waste </td>
             <td> Marco, Bryan Russel E. <br>
@@ -160,7 +166,7 @@
               Sestoso, Jhon Cedrick M. </td>
             <td> Pajabera, Orlando V. <br>
               Velasco, Antonio Y. </td>
-            <td style="text-align: center;"> March 2020 </td>
+            <td> March 2020 </td>
           </tr>
         </table>
 
@@ -169,49 +175,99 @@
       <div *ngIf="showAddBook" class="addBook">
 
         <form>
+          <div class="row">
+            <div class="col-lg-12 Authors" style="margin-top: 50px;">
+              Authors
+            </div>
+          </div>
           <div class="form-row" styles="margin-right: auto: margin-left: auto;">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">TITLE</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="TITLE">
+            <div class="form-group col-lg-4">
+              <label for="autFirstName">First Name</label>
+              <input type="text" class="form-control" id="autFirstName" placeholder="first name">
             </div>
-            <div class="form-group col-md-6">
-              <label for="inputPassword4">ISBN</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="ISBN">
+            <div class="form-group col-lg-4">
+              <label for="autMiddleName">Middle Name</label>
+              <input type="text" class="form-control" id="autMiddleName" placeholder="middle name">
             </div>
+            <div class="form-group col-lg-4">
+              <label for="autLastName">Last Name</label>
+              <input type="text" class="form-control" id="autLastName" placeholder="last name">
+            </div>
+          </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">TITLE</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="TITLE">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">ISBN</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="ISBN">
-              </div>
-
-              <div class="form-group col-md-6">
-                  <label for="inputEmail4">TITLE</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="TITLE">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputPassword4">ISBN</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="ISBN">
-                </div>
+          <div class="divider">
 
           </div>
+
+
+          <div class="row">
+              <div class="col-lg-12 Co-Authors">
+                Co-Authors
+              </div>
+            </div>
+            <div class="form-row" styles="margin-right: auto: margin-left: auto;">
+              <div class="form-group col-lg-4">
+                <label for="coFirstName">First Name</label>
+                <input type="text" class="form-control" id="coFirstName" placeholder="firstname">
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="coMiddleName">Middle Name</label>
+                <input type="text" class="form-control" id="coMiddleName" placeholder="middle name">
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="coLastName">Last Name</label>
+                <input type="text" class="form-control" id="coLastName" placeholder="last name">
+              </div>
+            </div>
+
+            <div class="divider">
+
+              </div>
+
+
+        <div class="form-row" styles="margin-right: auto: margin-left: auto;">
+            <div class="form-group col-lg-6">
+                <label for="thesisTitle">Thesis Title</label>
+                <input type="text" class="form-control" id="thesisTitle" placeholder="TITLE">
+              </div>
+              <div class="form-group col-lg-6">
+                <label for="isbn">ISBN</label>
+                <input type="var" class="form-control" id="isbn" placeholder="ISBN">
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label for="datePublished">Date Published</label>
+                  <input type="text" class="form-control" id="datePublished" placeholder="Date Published">
+              </div>
+              <div class="form-group col-lg-6">
+                  <label for="dateReceived">Date Received</label>
+                  <input type="text" class="form-control" id="dateReceived" placeholder="Date Received">
+
+              </div>
+
+              <div class="form-group col-lg-12">
+                  <label for="abstract">Abstract</label>
+                  <textarea class="form-control" id="abstractDesc" rows="6"></textarea>
+              </div>
+
+
+          </div>
+          <input class="submitForm" type="submit" value="Submit">
         </form>
 
         </div>
 
     </div>
 
-    <div class="bookAdminSettings" *ngIf="showAdminSettings" id="showDiv">
 
-    </div>
-
-    <div class="bookContact" *ngIf="showContact" id="showDiv">
-
-      </div>
 
 
 </div>
+<div class="bookAdminSettings" *ngIf="showAdminSettings" id="showDiv">
+
+</div>
+
+<div class="bookContact" *ngIf="showContact" id="showDiv">
+
+  </div>
 

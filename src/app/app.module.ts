@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthGuard} from './_guard/auth.guard';
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
@@ -18,6 +20,7 @@ import { EventEmitterService } from './event-emitter.service';
 import { HttpClientModule} from '@angular/common/http';
 import { DataService } from './data.service';
 import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,11 @@ import { RouterModule } from '@angular/router';
   providers: [
     EventEmitterService,
     DataService,
-    UserComponent
+    UserComponent,
+   // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    EventEmitterService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -8,6 +8,7 @@ import { AdminAccntComponent } from './admin-accnt/admin-accnt.component';
 import { AdminContentComponent } from './admin-accnt/admin-sidenav/admin-content/admin-content.component';
 import { AdminHeaderComponent } from './admin-accnt/admin-header/admin-header.component';
 import { AdminSidenavComponent } from './admin-accnt/admin-sidenav/admin-sidenav.component';
+import { AuthGuard } from './_guard/auth.guard';
 
 const routes: Routes = [
   // { path: '',
@@ -15,6 +16,7 @@ const routes: Routes = [
     // pathMatch: 'full'
   // } ,
   { path: 'admin_accnt', component: AdminAccntComponent},
+  { path: 'admin_accnt', canActivate: [AuthGuard], component: AdminAccntComponent},
   { path: 'admin_header', component: AdminHeaderComponent},
   { path: 'admin_sidenav', component: AdminSidenavComponent,
   children: [
