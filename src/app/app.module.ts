@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthGuard} from './_guard/auth.guard';
 import { environment } from '../environments/environment';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
@@ -19,6 +17,9 @@ import { AdminHeaderComponent } from './admin-accnt/admin-header/admin-header.co
 import { AdminContentComponent } from './admin-accnt/admin-sidenav/admin-content/admin-content.component';
 import { AdminSidenavComponent } from './admin-accnt/admin-sidenav/admin-sidenav.component';
 import { EventEmitterService } from './event-emitter.service';
+import { HttpClientModule} from '@angular/common/http';
+import { DataService } from './data.service';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -35,15 +36,19 @@ import { EventEmitterService } from './event-emitter.service';
     AdminSidenavComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    HttpClientModule
   ],
   providers: [
+    EventEmitterService,
+    DataService,
+    UserComponent,
+   // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     EventEmitterService,
     AuthGuard
   ],
