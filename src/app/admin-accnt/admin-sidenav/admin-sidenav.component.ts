@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService} from '../../service/authentication.service';
 import { Router } from '@angular/router';
-// import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import {FormBuilder, FormGroup, FormArray, Validators, Form} from '@angular/forms';
+import index from "@angular/cli/lib/cli";
+
+
+
+
 
 @Component({
   selector: 'app-admin-sidenav',
@@ -11,19 +16,54 @@ import { Router } from '@angular/router';
 export class AdminSidenavComponent implements OnInit {
   eventEmitterServices: any;
   eventEmitterService: any;
-
-  constructor(private authService: AuthenticationService, private router: Router ) { /*private fb: FormBuilder*/
-
-   }
-  //  productForm: FormGroup;
-
+  myAuthor = FormGroup;
+  name = FormArray;
   showHome = true;
   showBooks = false;
   showContact =  false;
   showAdminSettings = false;
-
   showBookList = false;
   showAddBook = false;
+  addAuthor(): FormGroup {
+    return this.fb.group({
+      AuthorName: ['', Validators.required]
+    });
+  }
+  get authorArr() {
+    return this.myAuthor.get('Author') as FormArray;
+  }
+  deleteButtonClickAuthor(index: number) {
+  this.authorArr.removeAt(index);
+  }
+
+  addButtonClickAuthor(): void {
+    this.authorArr.push(this.addAuthor());
+  }
+
+  addCoAuthor(): FormGroup {
+    return this.fb.group({
+      CoAuthorName: ['', Validators.required]
+    });
+  }
+  get CoAuthorArr() {
+    return this.myAuthor.get('CoAuthor') as FormArray;
+  }
+  deleteButtonClickCoAuthor(index: number) {
+    this.CoAuthorArr.removeAt(index);
+  }
+
+  addButtonClickCoAuthor(): void {
+    this.CoAuthorArr.push(this.addCoAuthor());
+  }
+
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
+
+
+
 
   // SignOut Firebase Session and Clean LocalStorage
   logoutUser() {
@@ -37,12 +77,32 @@ export class AdminSidenavComponent implements OnInit {
   }
 
   ngOnInit() {
-    if  (this.eventEmitterServices.subsVar === undefined) {
-      this.eventEmitterServices.subsVar = this.eventEmitterService.invokeAdminSidenavComponentFunction.subscribe((name: string) => {
+    // if  (this.eventEmitterServices.subsVar === undefined) {
+    //   this.eventEmitterServices.subsVar = this.eventEmitterService.invokeAdminSidenavComponentFunction.subscribe((name: string) => {
+    //
+    //   });
+    // }
+    const nameForm = this.fb.group({
+    fullName: [],
+     });
 
-      });
-    }
+
+    // @ts-ignore
+    this.myAuthor = this.fb.group({
+      Author: this.fb.array([this.addAuthor()]),
+      CoAuthor: this.fb.array([this.addCoAuthor()]),
+      title: '',
+      isbn: '',
+      published: '',
+      received: '',
+      abstract: '',
+      nameForm: this.fb.array([])
+    });
   }
+  get phoneForms() {
+    return this.myAuthor.get('phones') as FormArray;
+  }
+
 
   toggleBooks() {
     this.showBooks = ! this.showBooks;
@@ -52,7 +112,6 @@ export class AdminSidenavComponent implements OnInit {
       this.showAdminSettings = false;
     }
   }
-
   toggleAdminSettings() {
     this.showAdminSettings = ! this.showAdminSettings;
     if (this.showAdminSettings === true) {
@@ -93,5 +152,4 @@ export class AdminSidenavComponent implements OnInit {
       this.showBookList = false;
     }
   }
-
 }
