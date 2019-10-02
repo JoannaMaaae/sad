@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthGuard} from './_guard/auth.guard';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -33,7 +34,8 @@ import { RouterModule } from '@angular/router';
     AdminAccntComponent,
     AdminHeaderComponent,
     AdminContentComponent,
-    AdminSidenavComponent
+    AdminSidenavComponent,
+
   ],
   imports: [
     RouterModule,
@@ -41,16 +43,17 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [
     EventEmitterService,
     DataService,
     UserComponent,
-   // AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     EventEmitterService,
-    AuthGuard
+    AuthGuard,
+    AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })
