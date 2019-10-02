@@ -4,8 +4,6 @@
 
         <button class="aList" [class.active]= "this.showHome" (click)="toggleHome()">Home</button>
         <button class="aList" [class.active]= "this.showBooks" (click)="toggleBooks()">Books</button>
-        <button class="aList" [class.active]= "this.showAdminSettings" (click)="toggleAdminSettings()">Admin Settings</button>
-        <button class="aList" [class.active]= "this.showContact" (click)="toggleContact()">Contact</button>
         <button type="button" class="btn btn-danger"
         (click)="logoutUser()">Logout</button>
         <!-- <a value="call Function" (click)="toggleAbout()">About</a>
@@ -84,12 +82,12 @@
         </div>
       </div>
 
-      <div class="row justify-content-start" style="padding: 0; margin-top: 10px;">
-        <div class="col-lg-3" style="padding: 0;  margin-left: 10px;">
+      <div class="row justify-content-start">
+        <div class="col-lg-3" >
           <button (click)="toggleBookList()" [class.bookActive] ="showBookList" class="viewList">BOOK LISTING</button>
         </div>
 
-        <div class="col-lg-3" style="padding: 0; margin-left: 10px; ">
+        <div class="col-lg-3">
           <button (click)="toggleAddBook()" [class.bookActive] ="showAddBook" class="addToList">Add a Book</button>
         </div>
 
@@ -97,13 +95,21 @@
 
 
         <table>
-          <tr>
-            <td> ISBN </td>
-            <td> Title </td>
-            <td> Authors </td>
-            <td> Co-Authors </td>
-            <td> Date Published </td>
-          </tr>
+            <th> ISBN </th>
+            <th> Title </th>
+            <th> Authors </th>
+            <th> Co-Authors </th>
+            <th> Date Published </th>
+            <th> Action </th>
+
+            <!-- <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+            <td><button class="buttonEdit"> EDIT </button></td>
+            <td><button class="buttonEdit"> DELETE </button></td>-->
+
 
           <tr>
             <td> 5651 </td>
@@ -116,6 +122,9 @@
             <td> Pajabera, Orlando V. <br>
               Velasco, Antonio Y. </td>
             <td> March 2020 </td>
+            <td><button class="buttonEdit"> EDIT </button></td>
+            <td><button class="buttonEdit"> DELETE </button></td>
+
           </tr>
 
           <tr>

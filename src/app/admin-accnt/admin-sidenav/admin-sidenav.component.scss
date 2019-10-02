@@ -50,13 +50,13 @@
     font-size: 18px;
     color: white;
     display: block;
-    background-color: deepskyblue;
+    background-color: #FD991C;
     width: 100%;
     border: none;
     text-align:left;
 }
 .active:hover{
-  background-color: deepskyblue;
+  background-color:#FD991C;
   color: white;
 }
   /* Style page content */
@@ -64,7 +64,7 @@
   margin-left: 190px; /* Same as the width of the sidebar */
   padding: 0px 10px;
   color: black;
-  background-color: rgb(210, 233, 236)	;
+  background: linear-gradient(135deg, #FD991C 10%, #FCCF31 100%);
   width: 85%;
   height: 650px;
   position: relative;
@@ -89,7 +89,7 @@
   width: 90%;
   height: 550px;
   background-color: white;
-  border-top: 3px solid deepskyblue;
+  border-top: 3px solid #FD991C;
 }
 
 .bookAdminSettings{
@@ -100,7 +100,7 @@
   width: 90%;
   height: 600px;
   background-color: white;
-  border-top: 3px solid deepskyblue;
+  border-top: 3px solid #FD991C;
 }
 .buttonAdd{
   width:100%;
@@ -114,8 +114,8 @@
 .deleteButton{
   width:100%;
   height:30px;
-  background-color: deepskyblue;
-  border: 1px solid deepskyblue;
+  background-color: #FD991C;
+  border: 1px solid #FD991C;
   color: black;
   border: none;
 }
@@ -142,7 +142,7 @@
     height: 50px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: deepskyblue;
+    background-color: #FD991C;
     border: 1px solid black;
     color: black;
     text-align: center;
@@ -195,7 +195,7 @@ tr:nth-child(odd) {
   width: 90%;
   height: 600px;
   background-color: white;
-  border-top: 3px solid deepskyblue;
+  border-top: 3px solid #FD991C;
 }
 
 .bookContent{
@@ -206,7 +206,7 @@ tr:nth-child(odd) {
   width: 90%;
   height: 600px;
   background-color: white;
-  border-top: 3px solid deepskyblue;
+  border-top: 3px solid #FD991C;
 }
 
 
@@ -217,7 +217,7 @@ tr:nth-child(odd) {
     height: 100%;
     text-align: center;
     font-size: 18px;
-    border: 4px solid deepskyblue;
+    border: 4px solid #FD991C;
     padding: 10px;
 }
 
@@ -225,8 +225,8 @@ tr:nth-child(odd) {
   width: 95%;
   height: 450px;
   background-color: white;
-  border-top: 4px solid deepskyblue;
-  border-left: 2px solid deepskyblue;
+  border-top: 4px solid #FD991C;
+  border-left: 2px solid #FD991C;
   margin-top: -4px;
   overflow: scroll;
 }
@@ -235,9 +235,10 @@ tr:nth-child(odd) {
   width: 95%;
   height: 450px;
   background-color: white;
-  border-top: 4px solid deepskyblue;
-  border-left: 2px solid deepskyblue;
+  border-top: 4px solid #FD991C;
+  border-left: 2px solid #FD991C;
   margin-top: -4px;
+  margin-left: 5px;
   overflow: scroll;
 }
 
@@ -265,12 +266,12 @@ tr:nth-child(odd) {
     height: 100%;
     text-align: center;
     font-size: 18px;
-    border: 4px solid deepskyblue;
+    border: 4px solid #FD991C;
     padding: 10px;
 }
 
 .bookActive{
-  background-color: deepskyblue;
+  background-color: #FD991C;
     color: black;
     width: 100%;
     height: 100%;
@@ -292,3 +293,4 @@ tr:nth-child(odd) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
