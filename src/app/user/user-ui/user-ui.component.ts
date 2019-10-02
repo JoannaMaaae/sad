@@ -23,13 +23,13 @@ export class UserUIComponent implements OnInit {
   myKeyword = false;
   constructor(private data: DataService, private User: DataService, private router: Router) { }
   filtersResult(searchString: string) {
-    return this.result.filter(res => res.origin.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
+    return this.result.filter(res => res.Abstract.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
    }
    filtersTitle(searchString: string) {
-    return this.result.filter(res1 => res1.destination.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
+    return this.result.filter(res1 => res1.Title.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
    }
    filtersAuthor(searchString: string) {
-    return this.result.filter(res2 => res2.ship.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
+    return this.result.filter(res2 => res2.Author.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
    }
 
   onEnter(value: string) {
