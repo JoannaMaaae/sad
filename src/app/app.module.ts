@@ -33,7 +33,8 @@ import { RouterModule } from '@angular/router';
     AdminAccntComponent,
     AdminHeaderComponent,
     AdminContentComponent,
-    AdminSidenavComponent
+    AdminSidenavComponent,
+
   ],
   imports: [
     RouterModule,
