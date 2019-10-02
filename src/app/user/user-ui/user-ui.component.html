@@ -27,11 +27,19 @@
     <div class="row">
       <div class="col-lg-12">
         <b> UNDERGRAD/MASTERS</b> <br> <br>
-        <input type="text" placeholder= "&#xf002; Search keyword, title or the author of the book ...">
+        <input type="text"  #input [value]="message" id = "input" (keyup)="onEnter(input.value)" (keyup.enter)="clicked()"  placeholder= "&#xf002; Search keyword, title or the author of the book ...">
       </div>
     </div>
   </div>
-  
+  <table class="tab" id="myTable">
+    <tr *ngFor="let res of filterResult">
+      <td >{{res.origin}}</td>
+      <td >{{res.destination}}</td>
+      <td >{{res.time}}</td>
+      <td >{{res.ship}}</td>
+      <td >{{res.cut}}</td>
+    </tr>
+</table>
 <pre>
 
 

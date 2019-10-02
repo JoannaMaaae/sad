@@ -15,6 +15,9 @@ import { AdminHeaderComponent } from './admin-accnt/admin-header/admin-header.co
 import { AdminContentComponent } from './admin-accnt/admin-sidenav/admin-content/admin-content.component';
 import { AdminSidenavComponent } from './admin-accnt/admin-sidenav/admin-sidenav.component';
 import { EventEmitterService } from './event-emitter.service';
+import { HttpClientModule} from '@angular/common/http';
+import { DataService } from './data.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,17 @@ import { EventEmitterService } from './event-emitter.service';
     AdminSidenavComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    EventEmitterService
+    EventEmitterService,
+    DataService,
+    UserComponent
   ],
   bootstrap: [AppComponent]
 })

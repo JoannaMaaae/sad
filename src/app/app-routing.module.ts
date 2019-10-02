@@ -10,10 +10,10 @@ import { AdminHeaderComponent } from './admin-accnt/admin-header/admin-header.co
 import { AdminSidenavComponent } from './admin-accnt/admin-sidenav/admin-sidenav.component';
 
 const routes: Routes = [
-  { path: '',
-    redirectTo: '/admin',
-    pathMatch: 'full'
-  },
+  // { path: '',
+   // redirectTo: '',
+    // pathMatch: 'full'
+  // } ,
   { path: 'admin_accnt', component: AdminAccntComponent},
   { path: 'admin_header', component: AdminHeaderComponent},
   { path: 'admin_sidenav', component: AdminSidenavComponent,
