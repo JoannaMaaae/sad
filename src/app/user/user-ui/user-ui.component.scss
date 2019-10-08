@@ -1,3 +1,47 @@
+
+.tab{
+  width:100%;
+  table-layout: fixed;
+
+    tr{
+
+      border: 2px solid black;
+    }
+
+    th{
+      padding: 15px;
+      color: white;
+      font-size: .9em;
+      background: #00a4ed;
+      width: 16.66666%;
+      height: 20%;
+      border: 2px solid #00a4ed;
+    }
+
+    td{
+      padding: 10px;
+      color: #3e5471;
+      font-size: .8em;
+      height: 20%;
+      border: 2px solid black;
+
+      img{
+          height:50px;
+          width:50px;
+      }
+
+    }
+}
+
+  tr:nth-child(even) {
+    background-color: lightblue;
+  }
+
+  tr:nth-child(odd) {
+    background-color: white;
+  }
+
+
 .search{
     padding: 10px 60px 0px 60px; // t l b r
     text-align: center;

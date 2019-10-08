@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class UserUIComponent implements OnInit {
   message: string;
+  message1: string;
+  message2: string;
   value = '';
   click = false;
   public result = [];
@@ -39,12 +41,12 @@ export class UserUIComponent implements OnInit {
   }
   onEnter1(value: string) {
     this.value = value;
-    this.message = this.value;
+    this.message1 = this.value;
     this.filterResult = this.filtersTitle(value);
   }
   onEnter2(value: string) {
     this.value = value;
-    this.message = this.value;
+    this.message2 = this.value;
     this.filterResult = this.filtersTitle(value);
 
   }
@@ -57,6 +59,8 @@ export class UserUIComponent implements OnInit {
   ngOnInit() {
     this.data.currentMessage.subscribe(message => {
       this.message = message;
+      this.message1 = message;
+      this.message2 = message;
       this.filterResult = this.filtersResult(message);
       this.filterResult = this.filtersTitle(message);
       this.filterResult = this.filtersAuthor(message);
