@@ -30,6 +30,7 @@ export class AdminSidenavComponent implements OnInit {
     });
   }
   get authorArr() {
+    // @ts-ignore
     return this.myAuthor.get('Author') as FormArray;
   }
   deleteButtonClickAuthor(index: number) {
@@ -46,6 +47,7 @@ export class AdminSidenavComponent implements OnInit {
     });
   }
   get CoAuthorArr() {
+    // @ts-ignore
     return this.myAuthor.get('CoAuthor') as FormArray;
   }
   deleteButtonClickCoAuthor(index: number) {
@@ -100,6 +102,7 @@ export class AdminSidenavComponent implements OnInit {
     });
   }
   get phoneForms() {
+    // @ts-ignore
     return this.myAuthor.get('phones') as FormArray;
   }
 
