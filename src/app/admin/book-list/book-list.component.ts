@@ -8,28 +8,28 @@ import { map } from 'rxjs/operators';
 })
 export class BookListComponent implements OnInit {
 
-  customers: any;
+  theses: any;
 
-  constructor(private customerService: AccountService) { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
-    this.getCustomersList();
+    this.getBooksList();
   }
 
-  getCustomersList() {
-    this.customerService.getCustomersList().snapshotChanges().pipe(
+  getBooksList() {
+    this.accountService.getBooksList().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ key: c.payload.key, ...c.payload.val() })
         )
       )
-    ).subscribe(customers => {
-      this.customers = customers;
+    ).subscribe(thesis => {
+      this.theses = thesis;
     });
   }
 
-  deleteCustomers() {
-    this.customerService.deleteAll().catch(err => console.log(err));
+  deleteBook() {
+    this.accountService.deleteAll().catch(err => console.log(err));
   }
 
 }

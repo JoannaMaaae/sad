@@ -26,14 +26,14 @@
     <div class="inputbox">
       <div class="row">
         <div class="col-sm-12 col-md-3 col-lg-3">
-          <input type="text" [value]="message" [disabled]="KeywordIsDisabled" (click)="KeywordClick()" placeholder="&#xf031; &nbsp; Keyword"  #box (keyup)="onEnter(box.value)" (keyup.enter)="clicked" >
+          <input type="text" [value]="message" [disabled]="KeywordIsDisabled" placeholder="&#xf031; &nbsp; Keyword"  #box (keyup)="onEnter(box.value)" (keyup.enter)="clicked" >
 
         </div>
         <div class="col-sm-12 col-md-3 col-lg-3">
-          <input type="text" [value]="message1" placeholder="&#xf02d; &nbsp; Title" (click)="TitleClick()" [disabled]="TitleIsDisabled"  #box1 (keyup)="onEnter1(box1.value)" (keyup.enter)="clicked" >
+          <input type="text" [value]="message1" placeholder="&#xf02d; &nbsp; Title" [disabled]="TitleIsDisabled"  #box1 (keyup)="onEnter1(box1.value)" (keyup.enter)="clicked" >
         </div>
         <div class="col-sm-12 col-md-2 col-lg-3">
-          <input type="text"[value]="message2"  placeholder="&#xf406; &nbsp; Author" (click)="AuthorClick()" [disabled]="AuthorIsDisabled"  #box2 (keyup)="onEnter2(box2.value)" (keyup.enter)="clicked" >
+          <input type="text"[value]="message2"  placeholder="&#xf406; &nbsp; Author" [disabled]="AuthorIsDisabled"  #box2 (keyup)="onEnter2(box2.value)" (keyup.enter)="clicked" >
         </div>
         <div class="col-sm-12 col-md-2 col-lg-1">
           <button class="button2" (click)="newClick()">
@@ -60,65 +60,24 @@
 <div class="content-table">
   <table class="tab">
   <tr>
-      <th>Title and Abstract</th>
-      <th>Author/s</th>
+      <th>Title </th>
+      <th> Author/s</th>
+      <th>Abstract</th>
     </tr>
   </table>
 </div>
 
 <div class="content-table" >
   <table class="tab" id="myTable" *ngIf="myKeyword">
-    <tr *ngFor="let res of filterResult">
-      <td > <span style="font-size: 15px; text-align: left; text-decoration: underline; font-weight: 400;">
-             {{res.Title}}</span>
-         <br>
-         <br>
-         <span class="abst">
-          {{res.Abstract}}
-        </span>
-        </td>
-      <!-- <td >{{res.Title}}</td> -->
-      <td style="text-align: center;" >{{res.Author}}</td>
+      <tr *ngFor="let part of theses">
+        <td>{{part.title}}<br></td>
+        <td> {{part.fname}} {{part.mname}} {{part.lname}} </td>
+        <td>{{part.abstract}}</td>
 
     </tr>
   </table>
 </div>
 
-<div class="content-table" >
-    <table class="tab" id="myTable" *ngIf="myKeyword">
-      <tr *ngFor="let res of filterResult">
-        <td > <span style="font-size: 15px; text-align: left; text-decoration: underline; font-weight: 400;">
-               {{res1.Title}}</span>
-           <br>
-           <br>
-           <span class="abst">
-            {{res1.Abstract}}
-          </span>
-          </td>
-        <!-- <td >{{res1.Title}}</td> -->
-        <td style="text-align: center;" >{{res1.Author}}</td>
-
-      </tr>
-    </table>
-  </div>
-
-  <div class="content-table" >
-      <table class="tab" id="myTable" *ngIf="myKeyword">
-        <tr *ngFor="let res of filterResult">
-          <td > <span style="font-size: 15px; text-align: left; text-decoration: underline; font-weight: 400;">
-                 {{res2.Title}}</span>
-             <br>
-             <br>
-             <span class="abst">
-              {{res2.Abstract}}
-            </span>
-            </td>
-          <!-- <td >{{res2.Title}}</td> -->
-          <td style="text-align: center;" >{{res2.Author}}</td>
-
-        </tr>
-      </table>
-    </div>
 <pre>
 
 

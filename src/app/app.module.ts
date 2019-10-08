@@ -22,7 +22,6 @@ import { AdminContentComponent } from './admin-accnt/admin-sidenav/admin-content
 import { AdminSidenavComponent } from './admin-accnt/admin-sidenav/admin-sidenav.component';
 import { BookDetailComponent } from './admin/book-detail/book-detail.component';
 import { BookListComponent } from './admin/book-list/book-list.component';
-import { BookCreateComponent } from './admin/book-create/book-create.component';
 
 import { EventEmitterService } from './event-emitter.service';
 import { HttpClientModule} from '@angular/common/http';
@@ -46,7 +45,6 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     AdminSidenavComponent,
     BookDetailComponent,
     BookListComponent,
-    BookCreateComponent,
     EditFormComponent,
 
   ],

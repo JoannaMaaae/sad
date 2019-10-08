@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, FormArray, Validators, Form} from '@angular/forms';
-import index from '@angular/cli/lib/cli';
+import { Component, OnInit, Input } from '@angular/core';
+import { Compendium } from '../data';
+import { AccountService } from '../account.service';
+// import index from '@angular/cli/lib/cli';
 
 @Component({
   selector: 'app-edit-form',
@@ -8,13 +9,13 @@ import index from '@angular/cli/lib/cli';
   styleUrls: ['./edit-form.component.scss']
 })
 export class EditFormComponent implements OnInit {
-  myAuthor = FormGroup;
-  name = FormArray;
-  public click = false;
-  editForm() {
-    this.click = !this.click;
+  thesis: Compendium = new Compendium();
+  submitted = false;
+  public click = true;
+  exitForm() {
+    this.click = false;
   }
-
+/*
   addAuthor(): FormGroup {
     return this.fb.group({
       AuthorName: ['', Validators.required]
@@ -48,10 +49,26 @@ export class EditFormComponent implements OnInit {
   addButtonClickCoAuthor(): void {
     this.CoAuthorArr.push(this.addCoAuthor());
   }
+  */
 
-  constructor( private fb: FormBuilder) { }
+  constructor( private accountService: AccountService) { }
 
   ngOnInit() {
   }
+  newBook(): void {
+    this.submitted = false;
+    this.thesis = new Compendium();
+  }
+
+  save() {
+    this.accountService.createBook(this.thesis);
+    this.thesis = new Compendium();
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+
 
 }

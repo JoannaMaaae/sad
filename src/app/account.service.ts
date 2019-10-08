@@ -1,35 +1,35 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
-import { Customer } from './data';
+import { Compendium } from './data';
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
   private dbPath = '/author';
 
-  customersRef: AngularFireList<Customer> = null;
+  bookRef: AngularFireList<Compendium > = null;
 
   constructor(private db: AngularFireDatabase) {
-    this.customersRef = db.list(this.dbPath);
+    this.bookRef = db.list(this.dbPath);
   }
 
-  createCustomer(customer: Customer): void {
-    this.customersRef.push(customer);
+  createBook(thesis: Compendium ): void {
+    this.bookRef.push(thesis);
   }
 
-  updateCustomer(key: string, value: any): Promise<void> {
-    return this.customersRef.update(key, value);
+  updateBook(key: string, value: any): Promise<void> {
+    return this.bookRef.update(key, value);
   }
 
-  deleteCustomer(key: string): Promise<void> {
-    return this.customersRef.remove(key);
+  deleteBook(key: string): Promise<void> {
+    return this.bookRef.remove(key);
   }
 
-  getCustomersList(): AngularFireList<Customer> {
-    return this.customersRef;
+  getBooksList(): AngularFireList<Compendium > {
+    return this.bookRef;
   }
 
   deleteAll(): Promise<void> {
-    return this.customersRef.remove();
+    return this.bookRef.remove();
   }
 }

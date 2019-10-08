@@ -1,7 +1,7 @@
 <h1>Author</h1>
-<div *ngFor="let customer of customers" style="width: 300px;">
-    <app-book-detail [customer]='customer'></app-book-detail>
+<div *ngFor="let thesis of theses" style="width: 300px;">
+    <app-book-detail [thesis]='thesis'></app-book-detail>
 </div>
 <div style="margin-top:20px;">
-  <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button>
-</div>
+    <button type="button" class="button btn-danger" (click)='deleteBooks()'>Delete All</button>
+  </div>

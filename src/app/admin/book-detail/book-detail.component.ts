@@ -1,6 +1,7 @@
 import { Component, OnInit , Input} from '@angular/core';
 import { AccountService } from '../../account.service';
-import { Customer } from '../../data';
+import { Compendium } from '../../data';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-book-detail',
@@ -8,24 +9,52 @@ import { Customer } from '../../data';
   styleUrls: ['./book-detail.component.scss']
 })
 export class BookDetailComponent implements OnInit {
-
-  @Input() customer: Customer;
-
-  constructor(private customerService: AccountService) { }
+  @Input() thesis: Compendium;
+  showHome = true;
+  showBooks = false;
+  showContact =  false;
+  showAdminSettings = false;
+  showBookList = true;
+  showAddBook = false;
+  theses: any;
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
+  this.getBooksList();
+  }
+  getBooksList() {
+    this.accountService.getBooksList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(thesis => {
+      this.theses = thesis;
+    });
+  }
+
+  deleteBooks() {
+    this.accountService.deleteAll().catch(err => console.log(err));
   }
 
   updateActive(isActive: boolean) {
-    this.customerService
-      .updateCustomer(this.customer.key, { active: isActive })
+    this.accountService
+      .updateBook(this.thesis.key, { active: isActive })
       .catch(err => console.log(err));
   }
 
-  deleteCustomer() {
-    this.customerService
-      .deleteCustomer(this.customer.key)
+  deleteBook() {
+    this.accountService
+      .deleteBook(this.thesis.key)
       .catch(err => console.log(err));
+  }
+
+  toggleBookList() {
+    this.showBookList = ! this.showBookList;
+    if (this.showBookList === true) {
+      this.showAddBook = false;
+    }
   }
 
 }
