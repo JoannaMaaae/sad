@@ -1,5 +1,152 @@
-.upper {
+.tab {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tab tr {
+  border: 2px solid black;
+}
+
+.tab th {
+  padding: 15px;
+  color: white;
+  font-size: .9em;
+  background: #00a4ed;
+  width: 16.66666%;
+  height: 20%;
+  border: 2px solid #00a4ed;
+}
+
+.tab td {
+  padding: 10px;
+  color: #3e5471;
+  font-size: .8em;
+  height: 20%;
+  border: 2px solid black;
+}
+
+.tab td img {
+  height: 50px;
+  width: 50px;
+}
+
+tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+.search {
+  padding: 10px 60px 0px 60px;
+  text-align: center;
+}
+
+.search [class*="col-"] {
+  text-align: center;
+  padding: 0px;
+}
+
+.search [class*="col-"] input {
+  width: 13px;
+  cursor: pointer;
+}
+
+.search .inputbox {
+  text-align: center;
   background-color: #FD991C;
+  border-radius: 15px;
+  padding: 8px;
+  width: 100%;
+}
+
+.search .inputbox [class*="col-"] {
+  padding: 8px;
+  margin: 0;
+}
+
+.search .inputbox [class*="col-"] input {
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  outline: none;
+}
+
+.search .inputbox [class*="col-"] input::-webkit-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.search .inputbox [class*="col-"] input:-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.search .inputbox [class*="col-"] input::-ms-input-placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.search .inputbox [class*="col-"] input::placeholder {
+  font-family: "Font Awesome 5 Free", Helvetica;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 2;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.search .inputbox [class*="col-"] .button2 {
+  background-color: #FD991C;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 12px;
+  outline: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: .9em;
+  width: 100%;
+}
+
+.search .inputbox [class*="col-"] .button2:hover {
+  background-color: #FFB71C;
+}
+
+.upper {
+  background: linear-gradient(135deg, #FD991C 10%, #FCCF31 100%);
 }
 
 .upper [class*="col-"] {
@@ -143,4 +290,60 @@ footer hr {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
+
+@media screen and (max-width: 575.98px) {
+  .col-sm-2.puplogo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+  }
+  .col-sm-8.headings {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
+    max-width: 60%;
+  }
+  .col-sm-2.cpelogo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/*
+@media screen and (max-width: 768px){ 
+    .upper{
+        //background: linear-gradient( 135deg, #FD991C 10%, #FCCF31 100%);
+        background: pink;
+
+        [class*="col-"]{
+            text-align: center;
+            
+            .header{
+                padding: 30px;
+                color: black;
+                font-size: .8em;
+            }
+
+            .pup{
+            padding: 20px;
+
+                img{
+                    width: 90px;
+                    height: 98px;
+                }
+            }
+
+            .cpe{
+            padding: 15px;
+                img{
+                    width: 102px;
+                    height: 102px;
+                }
+            }
+        }
+    }
+}*/
 /*# sourceMappingURL=user-ui.component.css.map */

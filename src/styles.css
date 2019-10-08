@@ -10589,4 +10589,9 @@ body ::-webkit-scrollbar-track, html ::-webkit-scrollbar-track {
   width: 100%;
   margin: 0;
 }
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
 /*# sourceMappingURL=styles.css.map */

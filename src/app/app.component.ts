@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService} from './service/authentication.service';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,7 @@ import { AuthenticationService} from './service/authentication.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'SADFinalProject';
 
   selectedVal: string;
@@ -16,7 +19,6 @@ export class AppComponent {
   passwordInput: string;
   isForgotPassword: boolean;
   userDetails: any;
-
   constructor(private authService: AuthenticationService) {
     this.selectedVal = 'login';
     this.isForgotPassword = false;

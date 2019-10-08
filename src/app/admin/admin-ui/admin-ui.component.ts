@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AccountService} from '../../account.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-admin-ui',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-ui.component.scss']
 })
 export class AdminUIComponent implements OnInit {
-
-  constructor() { }
+  book: any;
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
+
   }
 
 }
