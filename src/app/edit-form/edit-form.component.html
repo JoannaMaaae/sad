@@ -1,0 +1,132 @@
+<button class="btn-select" (click)="editForm()">
+    Edit
+</button>
+
+<!--modal starts here-->
+  <div id="myModal" class="modal" *ngIf="this.click" data-keyboard="false" data-backdrop="static">
+  <!--Form Modal Starts Here-->
+    <div class="modal-content">
+        <div class="addBook">
+
+          <form [formGroup]="myAuthor">
+              <div class="row">
+                  <div class="col-lg-12 Authors" style="margin-top: 50px;">
+                    Authors
+                  </div>
+
+                  <div class="col-lg-12">
+                    <label for="authorName">Type Author's Name</label>
+                  </div>
+              </div>
+
+            <!-- add button-->
+              <div class="row  justify-content-start">
+                <div class ="form-group col-lg-4">
+                  <button class="buttonAdd" (click)="addButtonClickAuthor()">Add Author's Name</button>
+                </div>
+              </div>
+
+              <div class="form-row" formGroupName="authorName" *ngFor="let other of myAuthor.get('Author').controls; let i = index" class="form-group" styles="margin-right: auto: margin-left: auto;">
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <input type="text" formControlName="authorFName" class="form-control" id="authorFName" placeholder="First Name ..">
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                        <input type="text" formControlName="authorFName" class="form-control" id="authorFName" placeholder="Middle Name ..">
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                        <input type="text" formControlName="authorFName" class="form-control" id="authorFName" placeholder="Last Name ..">
+                    </div>
+
+                    <div class="row">
+                      <div class ="form-group col-lg-12">
+                          <button class="deleteButton" (click)="deleteButtonClickAuthor(i)">Remove Field</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+
+              <div class="row">
+                  <div class="col-lg-12 Co-Authors">
+                    Co-Authors
+                  </div>
+              </div>
+
+              <div class="form-group col-lg-8">
+                <label for="coAuthorName">Type Co-Author's Name</label>
+              </div>
+
+              <div class="row justify-content-start">
+                <div class ="form-group col-lg-4">
+                    <button class="buttonAdd" (click)="addButtonClickCoAuthor()">Add Co-Author's Name</button>
+                </div>
+              </div>
+
+                <div class="form-row" formGroupName="CoAuthorName" *ngFor="let other of myAuthor.get('CoAuthor').controls; let x = index" class="form-group" styles="margin-right: auto: margin-left: auto;">
+                    <div class="row">
+                      <div class="form-group col-lg-4">
+                        <input type="text" formControlName="CoauthorFName" class="form-control" id="coAuthorFName" placeholder="First Name..">
+                      </div>
+
+                      <div class="form-group col-lg-4">
+                          <input type="text" formControlName="CoauthorMName" class="form-control" id="coAuthorFName" placeholder="Middle Name..">
+                      </div>
+
+                      <div class="form-group col-lg-4">
+                          <input type="text" formControlName="CoauthorLName" class="form-control" id="coAuthorFName" placeholder="Last Name..">
+                      </div>
+                    </div>
+
+                    <div class="row justify-content-end">
+                      <div class ="form-group col-lg-8">
+                          <button class="deleteButton" (click)="deleteButtonClickCoAuthor(x)">Remove Fields</button>
+                      </div>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+
+            <div class="form-row" styles="margin-right: auto: margin-left: auto;">
+                <div class="form-group col-lg-6">
+                    <label for="thesisTitle">Thesis Title</label>
+                    <input type="text" formControlName="title" class="form-control" id="thesisTitle" placeholder="TITLE">
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" formControlName="isbn" class="form-control" id="isbn" placeholder="ISBN">
+                  </div>
+
+                  <div class="form-group col-lg-6">
+                      <label for="datePublished">Date Published</label>
+                      <input type="text" formControlName="published" class="form-control" id="datePublished" placeholder="Date Published">
+                  </div>
+                  <div class="form-group col-lg-6">
+                      <label for="dateReceived">Date Received</label>
+                      <input type="text" formControlName="received" class="form-control" id="dateReceived" placeholder="Date Received">
+
+                  </div>
+
+                  <div class="form-group col-lg-12">
+                      <label for="abstractDesc">Abstract</label>
+                      <textarea class="form-control" formControlName="abstract" id="abstractDesc" rows="6"></textarea>
+                  </div>
+
+
+              </div>
+              <input class="submitForm" type="submit" value="Submit">
+            </form>
+
+            </div>
+
+        </div>
+
+
+
+  </div>
