@@ -1,15 +1,13 @@
 /* The sidebar menu */
 .sidenav {
   height: 100%;
-  width: 15%;
+  width: 200px;
   position: absolute;
   z-index: 1;
   top: 0px;
   left: 0;
   background-color: rgb(39, 38, 38);
   overflow-x: hidden;
-  padding-top: 20px;
-  margin-top: 60px;
 
     /* The navigation menu links */
     a{
@@ -61,13 +59,13 @@
 }
   /* Style page content */
 .main {
-  margin-left: 190px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-  color: black;
-  background: linear-gradient(135deg, #FD991C 10%, #FCCF31 100%);
-  width: 85%;
-  height: 650px;
-  position: relative;
+  position: absolute;
+  margin-left: 191px;
+    padding: 0px 10px;
+    color: black;
+    background: linear-gradient(135deg, #FD991C 10%, #FCCF31 100%);
+    width: 86%;
+    height: 100%;
 }
 
 .Navig{
@@ -76,9 +74,7 @@
   background-color: #3f3c3c;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-right: 5px;
-  padding-left: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .bookHome{
@@ -294,3 +290,17 @@ tr:nth-child(odd) {
   .sidenav a {font-size: 18px;}
 }
 
+// // Extra small devices (portrait phones, less than 576px)
+// @media (max-width: 575.98px) { ... }
+
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
