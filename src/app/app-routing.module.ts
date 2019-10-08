@@ -11,11 +11,10 @@ import { AdminSidenavComponent } from './admin-accnt/admin-sidenav/admin-sidenav
 import { AuthGuard } from './_guard/auth.guard';
 
 const routes: Routes = [
-  // { path: '',
-   // redirectTo: '',
-    // pathMatch: 'full'
-  // } ,
-  { path: 'admin_accnt', component: AdminAccntComponent},
+  { path: '',
+  redirectTo: '/result',
+    pathMatch: 'full',
+  },
   { path: 'admin_accnt', canActivate: [AuthGuard], component: AdminAccntComponent},
   { path: 'admin_header', component: AdminHeaderComponent},
   { path: 'admin_sidenav', component: AdminSidenavComponent,
