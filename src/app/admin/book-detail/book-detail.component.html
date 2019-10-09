@@ -1,0 +1,28 @@
+
+<div class="bookContent" id="showDiv">
+
+    <div class="row">
+      <div class="col-lg-12" class="titleBook">
+        BOOKS
+      </div>
+    </div>
+      <table>
+          <th> ISBN </th>
+          <th> Title </th>
+          <th> Authors </th>
+          <th> Co-Authors </th>
+          <th> Date Published </th>
+          <th> Action </th>
+          <tr *ngFor="let part of theses">
+              <td>{{part.bookNum}}</td>
+              <td>{{part.title}}<br>
+                 </td>
+              <td> {{part.fname}} {{part.mname}} {{part.lname}} </td>
+              <td> {{part.cofname}} {{part.comname}} {{part.colname}} </td>
+              <td> {{part.datePub}} </td>
+              <td><button class="buttonEdit"> EDIT </button></td>
+              <td><button class="buttonEdit" (click)='deleteBook()'> DELETE </button></td>
+            </tr>
+
+      </table>
+  </div> 

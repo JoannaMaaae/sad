@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { Router } from '@angular/router';
+import { AccountService } from 'src/app/account.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-ui',
@@ -9,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class UserUIComponent implements OnInit {
   message: string;
+  message1: string;
+  message2: string;
   value = '';
   click = false;
   public result = [];
@@ -20,9 +24,10 @@ export class UserUIComponent implements OnInit {
   AuthorIsDisabled = false;
   myTitle = false;
   myAuthor = false;
-  myKeyword = false;
-  constructor(private data: DataService, private User: DataService, private router: Router) { }
-  filtersResult(searchString: string) {
+  myKeyword = true;
+  theses: any;
+  constructor( private router: Router, private accountService: AccountService) { }
+  filtersAbstract(searchString: string) {
     return this.result.filter(res => res.Abstract.toLowerCase().indexOf(searchString.toLowerCase()) !== -1 );
    }
    filtersTitle(searchString: string) {
@@ -34,44 +39,46 @@ export class UserUIComponent implements OnInit {
 
   onEnter(value: string) {
     this.value = value;
-    this.message = this.value;
-    this.filterResult = this.filtersResult(value);
+    this.theses = this.value;
+    this.theses = this.filtersAbstract(value);
   }
   onEnter1(value: string) {
     this.value = value;
-    this.message = this.value;
-    this.filterResult = this.filtersTitle(value);
+    this.theses = this.value;
+    this.theses = this.filtersAuthor(value);
   }
   onEnter2(value: string) {
     this.value = value;
-    this.message = this.value;
-    this.filterResult = this.filtersTitle(value);
+    this.theses = this.value;
+    this.theses = this.filtersTitle(value);
 
   }
   clicked = function() {
     this.click = true;
   };
-  newMessage() {
-    this.data.changeMessage(this.value);
-  }
+
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => {
-      this.message = message;
-      this.filterResult = this.filtersResult(message);
-      this.filterResult = this.filtersTitle(message);
-      this.filterResult = this.filtersAuthor(message);
-        });
-    this.User.getMessage()
-      .subscribe(data => this.result = data);
-    this.User.getMessage()
-      .subscribe(data => this.filterResult = data);
+    this.getBooksList();
      }
+     getBooksList() {
+      this.accountService.getBooksList().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ key: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(thesis => {
+        this.theses = thesis;
+        this.filterResult = thesis;
+      });
+    }
 
      newClick() {
        this.KeywordIsDisabled = false;
        this.TitleIsDisabled = false;
        this.AuthorIsDisabled = false;
      }
+     /*
    KeywordClick() {
      this.KeywordIsDisabled = false;
      this.TitleIsDisabled = true;
@@ -95,5 +102,5 @@ export class UserUIComponent implements OnInit {
      this.myKeyword = false;
      this.myTitle = false;
      this.myAuthor = true;
-   }
+   } */
 }

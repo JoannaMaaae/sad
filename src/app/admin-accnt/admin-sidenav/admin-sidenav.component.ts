@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService} from '../../service/authentication.service';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, FormArray, Validators, Form} from '@angular/forms';
-import index from '@angular/cli/lib/cli';
+//  import index from '@angular/cli/lib/cli';
 
 
 
@@ -14,7 +14,13 @@ import index from '@angular/cli/lib/cli';
   styleUrls: ['./admin-sidenav.component.scss']
 })
 export class AdminSidenavComponent implements OnInit {
-  eventEmitterServices: any;
+  showHome = true;
+  showBooks = false;
+  showContact =  false;
+  showAdminSettings = false;
+  showBookList = false;
+  showAddBook = false;
+ /* eventEmitterServices: any;
   eventEmitterService: any;
   myAuthor = FormGroup;
   name = FormArray;
@@ -153,6 +159,34 @@ export class AdminSidenavComponent implements OnInit {
     this.showAddBook = ! this.showAddBook;
     if (this.showAddBook === true) {
       this.showBookList = false;
+    }
+  }
+  */
+ constructor(
+  private authService: AuthenticationService,
+  private router: Router,
+  private fb: FormBuilder
+) {}
+
+ngOnInit() { }
+toggleBooks() {
+  this.showBooks = ! this.showBooks;
+  if (this.showBooks === true) {
+    this.showHome = false;
+    this.showContact = false;
+    this.showAdminSettings = false;
+  }
+}
+  toggleAddBook() {
+    this.showAddBook = ! this.showAddBook;
+    if (this.showAddBook === true) {
+      this.showBookList = false;
+    }
+  }
+  toggleBookList() {
+    this.showBookList = ! this.showBookList;
+    if (this.showBookList === true) {
+      this.showAddBook = false;
     }
   }
 }

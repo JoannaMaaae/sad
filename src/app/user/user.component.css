@@ -4,13 +4,32 @@
   width: 100%;
 }
 
+.upper {
+  text-align: center;
+  height: 300px;
+  width: 100%;
+  font-size: 1em;
+  color: black;
+  padding-top: 40px;
+  background: linear-gradient(135deg, #FD991C 10%, #FCCF31 100%);
+}
+
+.upper img {
+  height: 180px;
+  width: 180px;
+}
+
 .lower {
   text-align: center;
 }
 
 .lower .about {
-  padding: 50px 80px 0px 80px;
+  padding: 25px 50px 0px 50px;
   color: black;
+}
+
+.lower .about b, .lower .about p {
+  font-size: 14px;
 }
 
 .lower .started {
@@ -27,8 +46,8 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  border-radius: 12px;
+  font-size: 1em;
+  border-radius: 50px;
   width: 250px;
 }
 
@@ -167,54 +186,6 @@
         -ms-flex: 0 0 30%;
             flex: 0 0 30%;
     max-width: 30%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .upper {
-    text-align: center;
-    background-color: #FD991C;
-    height: 350px;
-    width: 100%;
-    font-size: 1em;
-    color: black;
-    padding-top: 70px;
-  }
-  .upper img {
-    height: 170px;
-    width: 170px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .upper {
-    text-align: center;
-    background-color: #FD991C;
-    height: 350px;
-    width: 100%;
-    font-size: 1.1em;
-    color: black;
-    padding-top: 70px;
-  }
-  .upper img {
-    height: 190px;
-    width: 190px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .upper {
-    text-align: center;
-    background-color: #FD991C;
-    height: 350px;
-    width: 100%;
-    font-size: 1.1em;
-    color: black;
-    padding-top: 70px;
-  }
-  .upper img {
-    height: 190px;
-    width: 190px;
   }
 }
 /*# sourceMappingURL=user.component.css.map */
